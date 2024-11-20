@@ -46,6 +46,6 @@ export class CarsService {
 
   async remove(id: number): Promise<void> {
     const carSearch = await this.findOne(id);
-    await this.carRepository.delete(carSearch.id)
+    await this.carRepository.remove(carSearch)
   }
 }
