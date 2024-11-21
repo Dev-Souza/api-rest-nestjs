@@ -10,4 +10,6 @@ export class Car {
     model: string;
     @Column('int')
     year: number;
+    @Column({ nullable: true })
+    imagem_carro: string;
 }

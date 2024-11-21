@@ -13,14 +13,12 @@ export class CarsService {
     private readonly carRepository: Repository<Car>
   ) { }
 
-  private readonly cars: Car[] = [];
-  private id = 1;
-
   async create(createCarDto: CreateCarDto): Promise<Car> {
     const car = {
       brand: createCarDto.brand,
       model: createCarDto.model,
-      year: createCarDto.year
+      year: createCarDto.year,
+      imagem_carro: createCarDto.imagem_carro
     }
     const newCar = await this.carRepository.save(car);
     return newCar;
